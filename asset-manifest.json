@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hkcmp_demo/static/css/main.06127795.css",
+    "main.js": "/hkcmp_demo/static/js/main.30c0a2c4.js",
+    "index.html": "/hkcmp_demo/index.html",
+    "main.06127795.css.map": "/hkcmp_demo/static/css/main.06127795.css.map",
+    "main.30c0a2c4.js.map": "/hkcmp_demo/static/js/main.30c0a2c4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.06127795.css",
+    "static/js/main.30c0a2c4.js"
+  ]
+}
