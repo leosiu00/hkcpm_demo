@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/hkcpm_demo/static/css/main.06127795.css",
-    "main.js": "/hkcpm_demo/static/js/main.30c0a2c4.js",
-    "index.html": "/hkcpm_demo/index.html",
-    "main.06127795.css.map": "/hkcpm_demo/static/css/main.06127795.css.map",
-    "main.30c0a2c4.js.map": "/hkcpm_demo/static/js/main.30c0a2c4.js.map"
+    "main.css": "/static/css/main.06127795.css",
+    "main.js": "/static/js/main.30c0a2c4.js",
+    "index.html": "/index.html",
+    "main.06127795.css.map": "/static/css/main.06127795.css.map",
+    "main.30c0a2c4.js.map": "/static/js/main.30c0a2c4.js.map"
   },
   "entrypoints": [
     "static/css/main.06127795.css",
