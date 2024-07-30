@@ -1,0 +1,45 @@
+.search-item-wrapper {
+    margin-top: 70px;
+
+    .search-item-titles {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+        div {
+            font-size: small;
+        }
+    }
+}
+
+.date-field {
+    display: flex;
+    margin-top: 20px;
+}
+
+.search-bar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .search-btn {
+        background-color: #00A651;
+        color: white;
+        width: 100px;
+        height: 35px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 30px;
+        font-size: small;
+
+        &.reset {
+            background-color: grey;
+        }
+    }
+
+    .search-row {
+        display: flex;
+        margin-top: 20px;
+    }
+}

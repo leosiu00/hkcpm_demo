@@ -1,0 +1,32 @@
+.field {
+    margin-top: 30px;
+    display: flex;
+
+    .field-title {
+        width: 15%;
+    }
+}
+
+.payment-btn {
+    background-color: #00A651;
+    color: white;
+    width: 150px;
+    height: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.more-info {
+    margin-top: 20px;
+
+    a {
+        margin-top: 20px;
+        font-size: 12px;
+        color: #00A651;
+    }
+}

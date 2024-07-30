@@ -1,0 +1,61 @@
+#id {
+  height: 100vh;
+}
+
+.nav-link {
+  font-size: 16px;
+  color: black;
+}
+
+body {
+  margin: 0;
+}
+
+.logo {
+  padding-left: 20px;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+}
+
+.nav-link-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.nav {
+  position: absolute;
+  left: 31%;
+}
+
+.sign-in-btn {
+  font-size: 17px;
+  background: black;
+  width: 79px;
+  border-radius: 25px;
+  height: 55px;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+      cursor: pointer;
+  }
+
+  &.full-width {
+      width: 100%;
+  }
+}
+
+nav .sign-in-btn {
+  position: absolute;
+  right: 7%;
+}
+
+.change-language a {
+  font-weight: bold;
+  color: green;
+}

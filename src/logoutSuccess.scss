@@ -1,0 +1,223 @@
+$mainTitleHeight: 56px;
+$loginFormWidth: 530px;
+
+$mainColor: #0097A7;
+$textColor: #FFF;
+//背景顏色
+$BackWhiteColor: #FFFFFF;
+$BackWhiteColor2: #FAFAFA;
+$lightgrayColor: #A7A7A7;
+
+$mainFont: 24px;
+$mainFont2: 16px;
+$toolBarFont: 16px;
+$loginTitleFont: 32px;
+$formMainFont: 20px;
+$formTextBoxTextFont: 16px;
+$formTextBoxBorderFont: 40px;
+$smallFont: 12px;
+
+$mainLeftMargin: 24px;
+
+
+
+//上面Bar的樣式
+.toolbar_section {
+    height: $mainTitleHeight;
+    background: $mainColor;
+
+    .toolbar_title {
+        line-height: $mainTitleHeight;
+        font-size: $mainFont;
+        margin-left: $mainLeftMargin;
+        color: $textColor;
+    }
+
+    .toolbar_title2 {
+        line-height: $mainTitleHeight;
+        font-size: $mainFont2;
+        margin-left: $mainLeftMargin;
+        color: $textColor;
+    }
+
+    .toolbar_right {
+        float: right;
+        height: $mainTitleHeight;
+        margin-right: 24px;
+        font-size: $toolBarFont;
+    }
+
+    .toolbar_text {
+        margin-left: 12px;
+        color: $textColor;
+        line-height: $mainTitleHeight;
+    }
+}
+
+//登入表單
+.login-container {
+    height: 50vh;
+    background: rgb(0, 36, 35);
+    background: linear-gradient(90deg, rgba(0, 36, 35, 1) 0%, rgba(12, 91, 56, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .return-btn {
+        position: absolute;
+        top: 15vh;
+        left: 100px;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .login-form {
+        width: $loginFormWidth;
+        height: 50%;
+        background-color: white;
+        margin: 0;
+        border-radius: 10px;
+        padding: 24px 70px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+
+        .login_title {
+            font-size: $loginTitleFont;
+            font-weight: 600;
+        }
+
+        .login_desc {
+            font-size: $smallFont;
+            margin-top: 12px;
+            margin-bottom: 24px;
+            color: $lightgrayColor;
+        }
+
+        .login_label {
+            font-size: $smallFont;
+            color: $lightgrayColor;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .login_textbox {
+            font-size: $formTextBoxTextFont;
+            line-height: $formTextBoxBorderFont;
+            margin-bottom: 20px;
+
+            .form_textbox {
+                padding-left: 12px;
+            }
+        }
+
+        .form_textbox {
+            border: 1px solid $lightgrayColor;
+            border-radius: 3px;
+            height: 40px;
+            width: 100%;
+            box-shadow: none;
+        }
+
+        .login_forget {
+            margin-top: 30px;
+            font-size: $smallFont;
+        }
+
+        .login_register {
+            margin-top: 30px;
+            font-size: $smallFont;
+        }
+
+        .login_link {
+            color: green;
+            text-decoration: none;
+        }
+
+        h1 {
+            margin-top: 100px;
+        }
+
+        .next-step-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 100px;
+
+            .re-login-btn {
+                background-color: black;
+                color: white;
+                width: 80%;
+                height: 40px;
+                margin: auto;
+                text-align: center;                
+                border-radius: 20px;
+                cursor: pointer;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+    }
+}
+
+
+
+.background_white {
+    min-height: calc(100vh - #{$mainTitleHeight});
+    background: $BackWhiteColor;
+}
+
+.background_white2 {
+    min-height: calc(100vh - #{$mainTitleHeight});
+    background: $BackWhiteColor2;
+}
+
+
+/****************改變Bootstrap樣式****************/
+
+
+.container {
+    width: 100vw;
+    padding: 0;
+    background: $BackWhiteColor2;
+}
+
+//排版
+.form.col-sm-1 {
+    padding: 0;
+}
+
+//選單
+.nav-pills>li {
+
+    &>a {
+        border-radius: 0;
+        color: $lightgrayColor;
+        font-size: $formTextBoxTextFont;
+
+        &:hover {
+            background: #E9E9E9;
+        }
+    }
+
+    &.active {
+        border-right: solid 4px $mainColor;
+
+        &>a {
+            color: $mainColor;
+            background: transparent;
+
+            &:hover {
+                color: $mainColor;
+                background: #E9E9E9;
+            }
+        }
+    }
+
+}
