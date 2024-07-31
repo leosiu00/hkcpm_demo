@@ -7,7 +7,7 @@
     "main.30c0a2c4.js.map": "/hkcpm_demo/static/js/main.30c0a2c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.06127795.css",
-    "static/js/main.30c0a2c4.js"
+    "/hkcpm_demo/static/css/main.06127795.css",
+    "/hkcpm_demo/static/js/main.30c0a2c4.js"
   ]
 }
