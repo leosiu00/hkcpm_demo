@@ -2,7 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import UserHome from "./user/userHome";
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
 } from "react-router-dom";
 import "./index.scss";
@@ -18,9 +18,9 @@ import UserContinuationPayment from "./user/userContinuationPayment";
 import UserPaymentSuccess from "./user/userPaymentSuccess";
 import LogoutSuccess from "./logoutSuccess";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
-    path: "/",
+    path: "/*",
     element: <Login />,
   },
   {

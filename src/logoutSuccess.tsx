@@ -7,7 +7,7 @@ const LogoutSuccess: React.FC = () => {
         <>
             <div className="login-container">
                 <a className="navbar-brand logo" href="#">
-                    <img src="/hkcpmlogo.png" width="104" height="84" alt="" />
+                    <img src="./hkcpmlogo.png" width="104" height="84" alt="" />
                 </a>
                 <div className='return-btn'> 返回</div>
                 <div className='login-form'>

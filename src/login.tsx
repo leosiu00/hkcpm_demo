@@ -18,7 +18,7 @@ function Login() {
             sessionStorage.setItem('user', 'admin');
         } else if (username === 'user' && password === 'user') {
             sessionStorage.setItem('user', 'user');
-            window.location.href = '/user';
+            window.location.href = '/hkcpm_demo/#/user';
         }
     };
 
@@ -26,9 +26,8 @@ function Login() {
         <>
             <div className="login-container">
                 <a className="navbar-brand logo" href="#">
-                    <img src="/hkcpmlogo.png" width="104" height="84" alt="" />
+                    <img src="./hkcpmlogo.png" width="104" height="84" alt="" />
                 </a>
-                <div className='return-btn'> 返回</div>
                 <div id="form1">
                     {/* <input type="hidden" name="_token" value="{{ csrf_token() }}" /> */}
                     <div className="login_form">
@@ -46,11 +45,11 @@ function Login() {
                             <button onClick={e => handleLogin(e)} className="sign-in-btn full-width">登入</button>
                             <div className="login_forget">
                                 忘記密碼? &nbsp;
-                                <Link className="login_link" to="/user/forget-password">請按此處</Link>
+                                <Link className="login_link" to="/user/forget-password" relative="path">請按此處</Link>
                             </div>
                             <div className="login_register">
                                 想建立新用戶? &nbsp;
-                                <Link className="login_link" to="/user/forget-password">請按此處</Link>                            </div>
+                                <Link className="login_link" to="/user/forget-password" relative="path">請按此處</Link>                            </div>
                         </div>
                     </div>
                 </div>

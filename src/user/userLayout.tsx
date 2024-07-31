@@ -13,7 +13,7 @@ const UserLayout = () => {
     return (
         <>
             <div className='nav-bar-wrapper'>
-                <img style={{ marginLeft: '20px' }} src="/hkcpmlogo.png" width="104" height="84" alt="" />
+                <img style={{ marginLeft: '20px' }} src="./hkcpmlogo.png" width="104" height="84" alt="" />
                 <div className='nav-end' style={{ display: 'flex', marginRight: '20px' }}>
                     <div style={{ marginLeft: '50px' }}>
                         陳大文 先生
