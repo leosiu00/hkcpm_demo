@@ -1,23 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './login.scss';
 import { Link } from 'react-router-dom';
+import { data } from "./importData/importData";
+import dataService from './util/data.service';
+import sessionService from './util/storage.service';
 
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [loginError, setLoginError] = useState(false);
 
+    useEffect(() => {
+        if (!dataService.get()) {
+            dataService.set(data);
+        }
+    }, []);
+
     const handleLogin = (e: React.MouseEvent) => {
-        console.log('login');
         e.preventDefault();
         if (!username || !password) {
             setLoginError(true);
             return;
         }
         if (username === 'admin' && password === 'admin') {
-            sessionStorage.setItem('user', 'admin');
+            sessionService.set('user', 'admin');
         } else if (username === 'user' && password === 'user') {
-            sessionStorage.setItem('user', 'user');
+            sessionService.set('user', 'user');
+            sessionService.set('memberProfile', 0);
+            window.location.href = '/hkcpm_demo/#/user';
+        } else if (username === 'user1' && password === 'user1') {
+            sessionService.set('user', 'user');
+            sessionService.set('memberProfile', 1);
+            window.location.href = '/hkcpm_demo/#/user';
+        } else if (username === 'user2' && password === 'user2') {
+            sessionService.set('user', 'user');
+            sessionService.set('memberProfile', 2);
             window.location.href = '/hkcpm_demo/#/user';
         }
     };

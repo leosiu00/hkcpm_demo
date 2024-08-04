@@ -13,7 +13,7 @@ import UserInfo from "./user/userInfo";
 import UserContinuation from "./user/userContinuation";
 import UserPayment from "./user/userPayment";
 import UserLearning from "./user/userLearning";
-import Payment from "./user/payment";
+import {data} from "./importData/importData";
 import UserContinuationPayment from "./user/userContinuationPayment";
 import UserPaymentSuccess from "./user/userPaymentSuccess";
 import LogoutSuccess from "./logoutSuccess";

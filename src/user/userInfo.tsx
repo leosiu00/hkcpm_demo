@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './userInfo.scss';
+import dataService from '../util/data.service';
+import sessionService from '../util/storage.service';
+// import {data as rawData} from '../importData/importData';
 
 interface UserInfoProps {
+    
 }
 
 const UserInfo: React.FC<UserInfoProps> = () => {
+    // useEffect(() => {
+    //     dataService.set(rawData);
+    // }, []);
+
+
+    let data;
+    if (sessionService.get('user') === 'user') {
+        data = dataService.get().userData[sessionService.get('memberProfile')];
+        console.log(data);
+    }
     return (
         <div className='wrapper'>
             <div className='title'>
@@ -14,7 +28,7 @@ const UserInfo: React.FC<UserInfoProps> = () => {
                 <div style={{ marginRight: '20px' }}>
                    Title 尊稱 
                 </div>
-                <select name="title">
+                <select name="title" defaultValue={data.title}>
 					<option value="Mr">Mr.</option>
 					<option value="Mrs">Mrs.</option>
 					<option value="Miss">Miss</option>
@@ -26,23 +40,23 @@ const UserInfo: React.FC<UserInfoProps> = () => {
                 Date of Birth 出生日期 <input type="date" name="birthDate"/>
             </div>
             <div className='input-field'>
-                Surname  <input type="text" name="surname_en"/>
+                Surname  <input type="text" name="surname_en" defaultValue={data?.surname}/>
             </div>
 			<div className='input-field'>
-                姓氏 <input type="text" name="surname_zh"/>
+                姓氏 <input type="text" name="surname_zh" defaultValue={data?.surname}/>
             </div>
 			<div className='input-field'>
-                Given Name   <input type="text" name="givenName_en"/>
+                Given Name   <input type="text" name="givenName_en" defaultValue={data?.givenName}/>
             </div>
 			<div className='input-field'>
-                名字 <input type="text" name="givenName_zh"/>
+                名字 <input type="text" name="givenName_zh" defaultValue={data?.givenName}/>
             </div>
             <div className='input-field'>
-                Marital Status 婚姻狀況 <input type="text" />
+                Marital Status 婚姻狀況 <input type="text" defaultValue={data?.martialStatus}/>
             </div>
             <div className='input-field'>
                 Gender 性別 
-				<select name="gender">
+				<select name="gender" defaultValue={data?.gender}>
 					<option value="M">Male</option>
 					<option value="F">Female</option>					
 				</select>
