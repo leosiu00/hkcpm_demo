@@ -8,69 +8,155 @@ const UserInfo: React.FC<UserInfoProps> = () => {
     return (
         <div className='wrapper'>
             <div className='title'>
-                <div>個人資料</div>
+				<div>Applicant Information  個人資料</div>
             </div>
             <div className='input-field'>
                 <div style={{ marginRight: '20px' }}>
-                    名稱:
+                   Title 尊稱 
                 </div>
-                <input type="text" />
+                <select name="title">
+					<option value="Mr">Mr.</option>
+					<option value="Mrs">Mrs.</option>
+					<option value="Miss">Miss</option>
+					<option value="Dr">Dr.</option>
+					<option value="Other">Other</option>
+				</select>
             </div>
             <div className='input-field'>
-                標題: <input type="text" />
+                Date of Birth 出生日期 <input type="date" name="birthDate"/>
             </div>
             <div className='input-field'>
-                會員編號: <input type="text" />
+                Surname  <input type="text" name="surname_en"/>
+            </div>
+			<div className='input-field'>
+                姓氏 <input type="text" name="surname_zh"/>
+            </div>
+			<div className='input-field'>
+                Given Name   <input type="text" name="givenName_en"/>
+            </div>
+			<div className='input-field'>
+                名字 <input type="text" name="givenName_zh"/>
             </div>
             <div className='input-field'>
-                工作地點: <input type="text" />
+                Marital Status 婚姻狀況 <input type="text" />
             </div>
             <div className='input-field'>
-                雇主名稱: <input type="text" />
+                Gender 性別 
+				<select name="gender">
+					<option value="M">Male</option>
+					<option value="F">Female</option>					
+				</select>
             </div>
             <div className='input-field'>
-                職位: <input type="text" />
+                Telephone 電話 
             </div>
+			<div className='input-field'>
+                Home 住宅 <input type="text" />
+            </div>
+			<div className='input-field'>
+                Office 公司 <input type="text" />
+            </div>
+			<div className='input-field'>
+                Mobile 手機 <input type="text" />
+            </div>
+			<div className='input-field'>
+                Email 電郵 <input type="email" />
+            </div>
+			<div className='input-field'>
+                Correspondence Address 聯絡地址 <textarea rows={5} />
+            </div>
+			<div className='input-field'>
+                Nationality 國藉 <input type="text" />
+            </div>
+			<div className='input-field'>
+               Passport/HKID No. 身份證件號碼 <input type="text" />
+            </div>
+			<div>
+				How did you know about Hong Kong Institute of Certified Property Managers? 你如何知道香港物業管理師學會？
+			</div>
+			<div>
+				<input type="checkbox" id="horns" name="horns" /><label>Friend/Family 朋友/家人</label>
+			</div>
+			<div>
+				<input type="checkbox" id="horns" name="horns" /><label>Career Fair 職業展覽 </label>
+			</div>					
+			<div>
+				<input type="checkbox" id="horns" name="horns" /><label>Internet 網站</label>
+			</div>					
+			<div>
+				<input type="checkbox" id="horns" name="horns" /><label>News/Magazine 報張/雜誌</label>
+			</div>					
+			<div>
+				<input type="checkbox" id="horns" name="horns" /><label>Other 其他</label>
+			</div>
             <div>
-                <h2>聯繫方式</h2>
+                <h2>Academic Information 學歷資料</h2>
             </div>
             <div className='input-field'>
-                通信地址: <input type="text" />
-            </div>
-            <div>
-                居住地址
+                Name of School/Institute Attended 院校名稱 <input type="text" />
             </div>
             <div className='input-field'>
-                國家: <input type="text" />
+                Highest Qualification Obtained 最高學歷  <input type="text" />
             </div>
             <div className='input-field'>
-                地址: <input type="text" />
+                Year of Obtained 獲取年份 <input type="number" min="1900" max="2099" step="1" value="2024" />
+            </div>
+			<div>
+                <h2>Qualification Information 專業資格資料</h2>
+            </div>
+			<div className='input-field'>
+                Name of Professional Organization 專業團體名稱 <input type="text" />
             </div>
             <div className='input-field'>
-                工作地址: <input type="text" />
+                Qualification Obtained 專業資格  <input type="text" />
             </div>
             <div className='input-field'>
-                地址: <input type="text" />
+                Year of Obtained 獲取年份 <input type="number" min="1900" max="2099" step="1" value="2024" />
             </div>
-            <div>
-                電子郵件
+			<div>
+                <h2>Work Experience Information 工作經驗資料</h2>
             </div>
-            <div>
-                手提電話
+			<div className='input-field'>
+                Name of Company 公司名稱  <input type="text" />
             </div>
-            {/* <div>接受有關物業管理學會的通訊</div>
-            <div>接受短訊</div>
-            <div>其他專業認可機構的現任成員</div>
-            <div>目前的就業狀況</div>
-            <div>工作狀態</div>
-            <div>雇主類型</div>
-            <div>雇員規模</div>
-            <div>堂前就業細節</div>
-            <div>最高學歷</div>
-            <div style={{ display: 'flex' }}>
-                <div>取消</div>
-                <div>儲存</div>
-            </div> */}
+			<div>Date of Employment 受聘日期</div>
+            <div className='input-field'>
+                From 由  <input type="date" />
+            </div>
+			<div className='input-field'>
+                To 至  <input type="date" />
+            </div>
+            <div className='input-field'>
+                Job Title & Duty 工作職位及職責 <textarea rows={5} />
+            </div>
+			<div className='input-field'>
+                Name of Company 公司名稱  <input type="text" />
+            </div>
+			<div>Date of Employment 受聘日期</div>
+            <div className='input-field'>
+                From 由  <input type="date" />
+            </div>
+			<div className='input-field'>
+                To 至  <input type="date" />
+            </div>
+            <div className='input-field'>
+                Job Title & Duty 工作職位及職責 <textarea rows={5} />
+            </div>
+			<div className='input-field'>
+                Name of Company 公司名稱  <input type="text" />
+            </div>
+			<div>Date of Employment 受聘日期</div>
+            <div className='input-field'>
+                From 由  <input type="date" />
+            </div>
+			<div className='input-field'>
+                To 至  <input type="date" />
+            </div>
+            <div className='input-field'>
+                Job Title & Duty 工作職位及職責 <textarea rows={5} />
+            </div>
+
+
 
         </div>
     );
