@@ -1,5 +1,7 @@
 import React from 'react';
 import './userPayment.scss';
+import dataService from '../util/data.service';
+import sessionService from '../util/storage.service';
 
 interface UserPaymentProps {
     // Define the props for the UserPayment component here
@@ -7,7 +9,12 @@ interface UserPaymentProps {
 
 const UserPayment: React.FC<UserPaymentProps> = () => {
     // Implement the UserPayment component logic here
-
+    let data;
+    if (sessionService.get('user') === 'user') {
+        data = dataService.get().userData[sessionService.get('memberProfile')];
+        console.log(data);
+    }
+	let courses =  data['courses'];
     return (
         <div className='wrapper'>
             <div className='title'>
@@ -32,15 +39,32 @@ const UserPayment: React.FC<UserPaymentProps> = () => {
                 </div>
             </div>
             <div className='search-item-wrapper'>
-                <div className='search-item-titles'>
-                <div>類別</div>
-                <div>確認/退款日期</div>
-                <div>參考編號</div>
-                <div>付款/退款明細</div>
-                <div>退款方式</div>
-                <div>金額(HKD)</div>
-                <div>退款原因</div>
-                <div>下載</div>
+                <div >
+					<table className='table'>
+						<tr>
+							<th>類別</th>
+							<th>確認/退款日期</th>
+							<th>參考編號</th>
+							<th>付款/退款明細</th>
+							<th>退款方式</th>
+							<th>金額(HKD)</th>
+							<th>退款原因</th>
+							<th>下載</th>
+						</tr>
+						{courses.map((course: any) => (
+							<tr>
+								<td>{course.cate}</td>
+								<td>{course.date}</td>
+								<td>{course.code}</td>
+								<td>{course.status}</td>
+								<td>{course.payment}</td>
+								<td>{course.price}</td>
+								<td>{course.reason}</td>
+								<td><img src='download_button.svg' height="20" alt="" /></td>
+							</tr>
+						))}
+
+					</table>
                 </div>
             </div>
         </div>

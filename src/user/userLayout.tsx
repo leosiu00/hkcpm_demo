@@ -23,11 +23,22 @@ const UserLayout = () => {
             <div style={{ display: 'flex' }}>
                 <div className="side-menu-wrapper" hidden={sideBarHidden}>
                     <div>
-                        <Link to='/user' className="sub-items ">主頁</Link>
-                        <Link to='/user/info' className="sub-items" >個人檔案</Link>
-                        <Link to='/user/continuation' className="sub-items">會籍續訂</Link>
-                        <Link to='/user/payment' className="sub-items">我的付款</Link>
-                        <Link to='/user/learning' className="sub-items">進修活動</Link>
+                        <Link to='/user' className="sub-items ">
+							<img src="./homepage_menu.svg" className="menu-icon" />
+							<span>主頁</span>
+						</Link>
+                        <Link to='/user/info' className="sub-items" >
+							<img src="./profile_menu.svg" className="menu-icon" />
+							<span>個人檔案</span></Link>
+                        <Link to='/user/continuation' className="sub-items">
+							<img src="./renewal_menu.svg" className="menu-icon" />
+							<span>會籍續訂</span></Link>
+                        <Link to='/user/payment' className="sub-items">
+							<img src="./payment_menu.svg" className="menu-icon" />
+							<span>我的付款</span></Link>
+                        <Link to='/user/learning' className="sub-items">
+							<img src="./event_menu.svg" className="menu-icon" />
+							<span>進修活動</span></Link>
                     </div>
                     <div className="side-menu-bottom">
                         <div className='logout-btn' onClick={logout}>登出</div>

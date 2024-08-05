@@ -37,17 +37,21 @@ const UserLearning = () => {
             </div>
             <div className='register-btn'>註冊所選活動</div>
             <div className='search-item-wrapper'>
-                <div className='search-item-titles'>
-                    <div>日期</div>
-                    <div>時間</div>
-                    <div>課程代碼</div>
-                    <div>課程名稱</div>
-                    <div>語言</div>
-                    <div>CPD時數</div>
-                    <div>類別</div>
-                    <div>能力</div>
-                    <div>類型</div>
-                    <div>費用(HKD)</div>
+                <div >
+					<table className='table'>
+						<tr>
+							<th>日期</th>
+							<th>時間</th>
+							<th>課程代碼</th>
+							<th>課程名稱</th>
+							<th>語言</th>
+							<th>CPD時數</th>
+							<th>類別</th>
+							<th>能力</th>
+							<th>類型</th>
+							<th>費用(HKD)</th>
+						</tr>
+					</table>
                 </div>
             </div>
         </div>

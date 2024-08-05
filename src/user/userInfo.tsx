@@ -9,16 +9,16 @@ interface UserInfoProps {
 }
 
 const UserInfo: React.FC<UserInfoProps> = () => {
-    // useEffect(() => {
-    //     dataService.set(rawData);
-    // }, []);
-
 
     let data;
     if (sessionService.get('user') === 'user') {
         data = dataService.get().userData[sessionService.get('memberProfile')];
         console.log(data);
     }
+
+	const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
+
+
     return (
         <div className='wrapper'>
             <div className='title'>
@@ -40,16 +40,16 @@ const UserInfo: React.FC<UserInfoProps> = () => {
                 Date of Birth 出生日期 <input type="date" name="birthDate"/>
             </div>
             <div className='input-field'>
-                Surname  <input type="text" name="surname_en" defaultValue={data?.surname}/>
+                Surname  <input type="text" name="surName_en" defaultValue={data?.surName_en}/>
             </div>
 			<div className='input-field'>
-                姓氏 <input type="text" name="surname_zh" defaultValue={data?.surname}/>
+                姓氏 <input type="text" name="surName_zh" defaultValue={data?.surName_zh}/>
             </div>
 			<div className='input-field'>
-                Given Name   <input type="text" name="givenName_en" defaultValue={data?.givenName}/>
+                Given Name   <input type="text" name="givenName_en" defaultValue={data?.givenName_en}/>
             </div>
 			<div className='input-field'>
-                名字 <input type="text" name="givenName_zh" defaultValue={data?.givenName}/>
+                名字 <input type="text" name="givenName_zh" defaultValue={data?.givenName_zh}/>
             </div>
             <div className='input-field'>
                 Marital Status 婚姻狀況 <input type="text" defaultValue={data?.martialStatus}/>
@@ -169,8 +169,25 @@ const UserInfo: React.FC<UserInfoProps> = () => {
             <div className='input-field'>
                 Job Title & Duty 工作職位及職責 <textarea rows={5} />
             </div>
-
-
+			<div>
+                <h2>Documents 文件</h2>
+            </div>
+			<div>
+                申請人身份證或護照影印本
+			</div>
+			<div>
+				<input type='file' onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+					if (!event.target.files) return
+						setSelectedFile(event.target.files[0]);
+					}}/>
+				<img src={selectedFile === null ? '' : URL.createObjectURL(selectedFile)} alt="preview" />
+            </div>
+			<div>
+                <h2>Documents 文件</h2>
+            </div>
+			<div>
+                <h2>Documents 文件</h2>
+            </div>
 
         </div>
     );
