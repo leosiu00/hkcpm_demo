@@ -26,3 +26,13 @@
         color: grey;
     }
 }
+
+.item-wrapper  .default-image,
+.item-wrapper:hover .hover-image{
+  display: block;
+}
+
+.item-wrapper .hover-image,
+.item-wrapper:hover .default-image{
+  display: none;
+}

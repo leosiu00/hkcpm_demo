@@ -12,8 +12,11 @@ const UserHome: React.FC<UserHomeProps> = () => {
     return (
         <div style={{ padding: '50px' }}>
             <div style={{ display: 'flex' }}>
-                <Link className='item-wrapper' to='info' style={{ width: '45%', height: '200px'}}>
-                    <img src="./profile_homepage.svg" width="104" height="84" alt="" />
+                <Link className='item-wrapper' to='info' 
+					
+					style={{ width: '45%', height: '200px'}}>
+                    <img src="./profile_homepage.svg" width="104" height="84" alt="" className="default-image" />
+                    <img src="./profile_homepage_white.svg" width="104" height="84" alt="" className="hover-image" />
                     <div className='item-title'>
                         個人檔案
                     </div>
@@ -22,7 +25,8 @@ const UserHome: React.FC<UserHomeProps> = () => {
                     </div>
                 </Link>
                 < Link className='item-wrapper' to='continuation' style={{ width: '45%', height: '200px', marginLeft: '20px' }}>
-                    <img src="./renewal_homepage.svg" width="104" height="84" alt="" />
+                    <img src="./renewal_homepage.svg" width="104" height="84" alt="" className="default-image" />
+                    <img src="./renewal_homepage_white.svg" width="104" height="84" alt="" className="hover-image" />
                     <div className='item-title'>
                         會員的年度續訂
                     </div>
@@ -33,7 +37,8 @@ const UserHome: React.FC<UserHomeProps> = () => {
             </div>
             <div style={{ display: 'flex' }}>
                 < Link className='item-wrapper' to='payment' style={{ width: '45%', height: '200px', marginTop: '20px' }}>
-                    <img src="./payment_homepage.svg" width="104" height="84" alt="" />
+                    <img src="./payment_homepage.svg" width="104" height="84" alt="" className="default-image" />
+                    <img src="./payment_homepage_white.svg" width="104" height="84" alt="" className="hover-image" />
                     <div className='item-title'>
                         我的付款
                     </div>
@@ -42,7 +47,8 @@ const UserHome: React.FC<UserHomeProps> = () => {
                     </div>
                 </Link>
                 < Link className='item-wrapper' to='learning' style={{ width: '45%', height: '200px', marginLeft: '20px', marginTop: '20px' }}>
-                    <img src="./event_homepage.svg" width="104" height="84" alt="" />
+                    <img src="./event_homepage.svg" width="104" height="84" alt="" className="default-image" />
+                    <img src="./event_homepage_white.svg" width="104" height="84" alt="" className="hover-image" />
                     <div className='item-title'>
                         電子專業進修活動
                     </div>
