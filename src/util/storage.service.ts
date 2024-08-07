@@ -29,7 +29,10 @@ const sessionService = {
             return JSON.parse(string);
         }
         return string ?? null;
-    }
+    },
+	signOut: ()=> {
+		sessionStorage.clear();
+	},
 }
 
 export default sessionService;

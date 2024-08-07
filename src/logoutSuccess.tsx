@@ -1,8 +1,13 @@
 import React from 'react';
 import './logoutSuccess.scss';
 import { Link } from 'react-router-dom';
+import sessionService from './util/storage.service';
+
 
 const LogoutSuccess: React.FC = () => {
+	
+	sessionService.signOut();
+	
     return (
         <>
             <div className="login-container">
