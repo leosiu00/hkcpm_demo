@@ -4,6 +4,12 @@ input, select {
     border-radius: 5px;
     padding: 0 10px;
     margin-bottom: 10px;
+	
+
+}
+
+input[type='checkbox'] {
+	height: auto;
 }
 
 textarea{
@@ -131,4 +137,15 @@ textarea{
 	padding-right: 15px;
 	height: 30px;
 	margin: -7px;
+}
+
+h2{
+	border-top: 1px solid #89898959;
+	padding-top:5px;
+	color: #838383;
+}
+
+.no-border{
+	border:none;
+	padding-top:0px
 }

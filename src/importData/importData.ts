@@ -8,6 +8,12 @@ let data = {
             'martialStatus': 'Married',
             'title': 'Mr',
             'gender': 'M',
+			'membershipNo': '000001',
+			'membershipType': 'Ordinary 普通會員',
+			'membershipExpiry': '已續約',
+			'membershipExpiryDate': '31/12/2024',
+			'membershipFee': 'HK$600',
+			'membershipForm': '已履行',
 			'courses':[
 				{	
 					"cate":1,

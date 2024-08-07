@@ -22,7 +22,7 @@ const UserInfo: React.FC<UserInfoProps> = () => {
     return (
         <div className='wrapper'>
             <div className='title'>
-				<div>Applicant Information  個人資料</div>
+				<h2 className='no-border'>Applicant Information  個人資料</h2>
             </div>
             <div className='input-field'>
                 <div style={{ marginRight: '20px' }}>
@@ -180,13 +180,24 @@ const UserInfo: React.FC<UserInfoProps> = () => {
 					if (!event.target.files) return
 						setSelectedFile(event.target.files[0]);
 					}}/>
-				<img src={selectedFile === null ? '' : URL.createObjectURL(selectedFile)} alt="preview" />
             </div>
 			<div>
-                <h2>Documents 文件</h2>
+                一張 2 吋 x 1.5 吋相片
+			</div>
+			<div>
+				<input type='file' onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+					if (!event.target.files) return
+						setSelectedFile(event.target.files[0]);
+					}}/>
             </div>
 			<div>
-                <h2>Documents 文件</h2>
+                申請人的學歷證明、專業資格及工作經驗證明副本
+			</div>
+			<div>
+				<input type='file' onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+					if (!event.target.files) return
+						setSelectedFile(event.target.files[0]);
+					}}/>
             </div>
 
         </div>

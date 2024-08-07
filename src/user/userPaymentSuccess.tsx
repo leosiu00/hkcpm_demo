@@ -14,7 +14,7 @@ const UserPaymentSuccess: React.FC = () => {
                 </div>
                 <div className='payment-entry'>
                     <p className='entry-title'>金額 (HKD)</p>
-                    <p className='entry-detail'>$2200</p>
+                    <p className='entry-detail'>$3000</p>
                 </div>
                 <div className='payment-entry'>
                     <p className='entry-title'>參考編號</p>
@@ -23,7 +23,7 @@ const UserPaymentSuccess: React.FC = () => {
                 <Link to='/user' className='return-home-btn'>返回主頁</Link>
             </div>
             <div className='right-div'>
-                <img src="/hkcpmlogo.png" width="312" height="252" alt="" />
+                <img src="./hkcpmlogo.png" width="312" height="252" alt="" />
             </div>
         </div>
     );

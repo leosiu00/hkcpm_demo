@@ -12,9 +12,22 @@ const UserPayment: React.FC<UserPaymentProps> = () => {
     let data;
     if (sessionService.get('user') === 'user') {
         data = dataService.get().userData[sessionService.get('memberProfile')];
-        console.log(data);
     }
 	let courses =  data['courses'];
+	
+	const [filteredCourses, setFilteredCourses] = React.useState(courses);
+
+	const handleFilter = (event : any) => {
+	  const value = event.target.value;
+	  let  filtered = courses;
+	  if(value  !== ""){		
+		filtered = courses.filter((c:any) => c.cate.toString() === value);
+	  }
+	  setFilteredCourses(filtered);
+	};
+	
+	
+	
     return (
         <div className='wrapper'>
             <div className='title'>
@@ -25,7 +38,7 @@ const UserPayment: React.FC<UserPaymentProps> = () => {
                     <div style={{ marginRight: '20px' }}>
                         類別:
                     </div>
-                    <input type="text" />
+                    <input type="text" onChange={handleFilter}  />
                 </div>
                 <div className='date-field'>
                     <div style={{ marginRight: '20px' }}>
@@ -41,28 +54,32 @@ const UserPayment: React.FC<UserPaymentProps> = () => {
             <div className='search-item-wrapper'>
                 <div >
 					<table className='table'>
-						<tr>
-							<th>類別</th>
-							<th>確認/退款日期</th>
-							<th>參考編號</th>
-							<th>付款/退款明細</th>
-							<th>退款方式</th>
-							<th>金額(HKD)</th>
-							<th>退款原因</th>
-							<th>下載</th>
-						</tr>
-						{courses.map((course: any) => (
+						<thead>
 							<tr>
-								<td>{course.cate}</td>
-								<td>{course.date}</td>
-								<td>{course.code}</td>
-								<td>{course.status}</td>
-								<td>{course.payment}</td>
-								<td>{course.price}</td>
-								<td>{course.reason}</td>
-								<td><img src='download_button.svg' height="20" alt="" /></td>
+								<th>類別</th>
+								<th>確認/退款日期</th>
+								<th>參考編號</th>
+								<th>付款/退款明細</th>
+								<th>退款方式</th>
+								<th>金額(HKD)</th>
+								<th>退款原因</th>
+								<th>下載</th>
 							</tr>
-						))}
+						</thead>
+						<tbody>
+							{filteredCourses.map((course: any) => (
+								<tr>
+									<td>{course.cate}</td>
+									<td>{course.date}</td>
+									<td>{course.code}</td>
+									<td className='green'>{course.status}</td>
+									<td>{course.payment}</td>
+									<td>{course.price}</td>
+									<td>{course.reason}</td>
+									<td><img src='./download_button.svg' height="20" alt="" /></td>
+								</tr>
+							))}
+						</tbody>
 
 					</table>
                 </div>
