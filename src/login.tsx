@@ -3,6 +3,8 @@ import './login.scss';
 import { Link } from 'react-router-dom';
 import { data } from "./importData/importData";
 import dataService from './util/data.service';
+import { courseData } from "./importData/coursesList";
+import courseService from './util/courseData.service';
 import sessionService from './util/storage.service';
 
 function Login() {
@@ -13,6 +15,9 @@ function Login() {
     useEffect(() => {
         if (!dataService.get()) {
             dataService.set(data);
+        }        
+		if (!courseService.get()) {
+            courseService.set(courseData);
         }
     }, []);
 

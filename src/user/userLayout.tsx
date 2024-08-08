@@ -23,20 +23,20 @@ const UserLayout = () => {
             <div style={{ display: 'flex' }}>
                 <div className="side-menu-wrapper" hidden={sideBarHidden}>
                     <div>
-                        <Link to='/user' className="sub-items ">
+                        <Link to='/user' className={`sub-items ${location?.pathname=='#/user'?'':'green'}`}>
 							<img src="./homepage_menu.svg" className="menu-icon" />
 							<span>主頁</span>
 						</Link>
-                        <Link to='/user/info' className="sub-items" >
+                        <Link to='/user/info' className={`sub-items ${location?.pathname=='#/user/info'?'':'green'}`} >
 							<img src="./profile_menu.svg" className="menu-icon" />
 							<span>個人檔案</span></Link>
-                        <Link to='/user/continuation' className="sub-items">
+                        <Link to='/user/continuation' className={`sub-items ${location?.pathname=='#/user/continuation'?'':'green'}`}>
 							<img src="./renewal_menu.svg" className="menu-icon" />
 							<span>會籍續訂</span></Link>
-                        <Link to='/user/payment' className="sub-items">
+                        <Link to='/user/payment' className={`sub-items ${location?.pathname=='#/user/payment'?'':'green'}`}>
 							<img src="./payment_menu.svg" className="menu-icon" />
 							<span>我的付款</span></Link>
-                        <Link to='/user/learning' className="sub-items">
+                        <Link to='/user/learning' className={`sub-items ${location?.pathname=='#/user/learning'?'':'green'}`}>
 							<img src="./event_menu.svg" className="menu-icon" />
 							<span>進修活動</span></Link>
                     </div>
