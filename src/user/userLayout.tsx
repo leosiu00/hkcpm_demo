@@ -1,8 +1,18 @@
 import React, { createRef, Fragment, useEffect } from 'react';
 import './userLayout.scss';
+import dataService from '../util/data.service';
+import sessionService from '../util/storage.service';
 import { Link, Navigate, Outlet, useLocation, useNavigate, useNavigation } from 'react-router-dom';
 const UserLayout = () => {
     const location = useLocation();
+	let data;
+
+    if (sessionService.get('user') === 'user') {
+        data = dataService.get().userData[sessionService.get('memberProfile')];
+        console.log(data);
+    }
+	
+	console.log(location?.pathname);
     const sideBarHidden = location?.pathname === '/user/continuation/payment' || location?.pathname === '/user/payment/success';
     const navigate = useNavigate();
 
@@ -15,28 +25,31 @@ const UserLayout = () => {
             <div className='nav-bar-wrapper'>
                 <img style={{ marginLeft: '20px' }} src="./hkcpmlogo.png" width="104" height="84" alt="" />
                 <div className='nav-end' style={{ display: 'flex', marginRight: '20px' }}>
-                    <div style={{ marginLeft: '50px' }}>
-                        陳大文 先生
+					<div>
+						<img src="./notification_on.svg" width='30px' />
+					</div>
+                    <div style={{ marginLeft: '10px', marginTop: '5px'  }}>
+                        {data.title+' '+data.surName_en+' '+data.givenName_en}
                     </div>
                 </div>
             </div>
             <div style={{ display: 'flex' }}>
                 <div className="side-menu-wrapper" hidden={sideBarHidden}>
                     <div>
-                        <Link to='/user' className={`sub-items ${location?.pathname=='#/user'?'':'green'}`}>
+                        <Link to='/user' className={`sub-items ${location?.pathname=='/user'?'green':''}`}>
 							<img src="./homepage_menu.svg" className="menu-icon" />
 							<span>主頁</span>
 						</Link>
-                        <Link to='/user/info' className={`sub-items ${location?.pathname=='#/user/info'?'':'green'}`} >
+                        <Link to='/user/info' className={`sub-items ${location?.pathname==='/user/info'?'green':''}`} >
 							<img src="./profile_menu.svg" className="menu-icon" />
 							<span>個人檔案</span></Link>
-                        <Link to='/user/continuation' className={`sub-items ${location?.pathname=='#/user/continuation'?'':'green'}`}>
+                        <Link to='/user/continuation' className={`sub-items ${location?.pathname==='/user/continuation'?'green':''}`}>
 							<img src="./renewal_menu.svg" className="menu-icon" />
 							<span>會籍續訂</span></Link>
-                        <Link to='/user/payment' className={`sub-items ${location?.pathname=='#/user/payment'?'':'green'}`}>
+                        <Link to='/user/payment' className={`sub-items ${location?.pathname==='/user/payment'?'green':''}`}>
 							<img src="./payment_menu.svg" className="menu-icon" />
 							<span>我的付款</span></Link>
-                        <Link to='/user/learning' className={`sub-items ${location?.pathname=='#/user/learning'?'':'green'}`}>
+                        <Link to='/user/learning' className={`sub-items ${location?.pathname==='/user/learning'?'green':''}`}>
 							<img src="./event_menu.svg" className="menu-icon" />
 							<span>進修活動</span></Link>
                     </div>

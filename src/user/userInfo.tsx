@@ -3,6 +3,7 @@ import './userInfo.scss';
 import dataService from '../util/data.service';
 import sessionService from '../util/storage.service';
 // import {data as rawData} from '../importData/importData';
+import { Link } from 'react-router-dom';
 
 interface UserInfoProps {
     
@@ -20,7 +21,7 @@ const UserInfo: React.FC<UserInfoProps> = () => {
 
 
     return (
-        <div className='wrapper'>
+        <div className='userinfo-wrapper'>
             <div className='title'>
 				<h2 className='no-border'>Applicant Information  個人資料</h2>
             </div>
@@ -199,7 +200,13 @@ const UserInfo: React.FC<UserInfoProps> = () => {
 						setSelectedFile(event.target.files[0]);
 					}}/>
             </div>
-
+			<div>
+				<h2></h2>
+				<div className="submit-group">
+				 <Link to='/user' className='b-white'>取消</Link>
+				 <Link to='/user' className='b-black'>儲存</Link>			
+				</div>
+			</div>
         </div>
     );
 };

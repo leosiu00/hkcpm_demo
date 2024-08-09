@@ -9,7 +9,14 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    cursor: pointer
+    cursor: pointer;
+	
+
+}
+
+.register-btn:disabled{
+	background-color: lightgrey;
+	cursor: default;
 }
 
 .search-item-wrapper {

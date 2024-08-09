@@ -1,16 +1,28 @@
 import React from 'react';
 import './userLearning.scss';
 import courseService from '../util/courseData.service';
+import dataService from '../util/data.service';
 import sessionService from '../util/storage.service';
+import { Link, Navigate, Outlet, useLocation, useNavigate, useNavigation } from 'react-router-dom';
 
 const UserLearning = () => {
     // Your code here
+	const navigate = useNavigate();
+	
 	let courses:any;
 	courses = sessionService.get('courseData');
-	let a = 0;
-	let b = 1;
-	const [filteredCourses, setFilteredCourses] = React.useState(courses);
+	
+	let data;
+	let role : string;
+    if (sessionService.get('user') === 'user') {
+        data = dataService.get().userData[sessionService.get('memberProfile')];
+        role = data['role'];
+    }
 
+
+	const [filteredCourses, setFilteredCourses] = React.useState(courses);
+	const [btnStatus, setBtnStatus] = React.useState(true);
+	
 	const handleFieldFilter = (event : any) => {
 	  const value = event.target.value;
 	  let  filtered = courses;
@@ -28,6 +40,28 @@ const UserLearning = () => {
 	  setFilteredCourses(filtered);
 	};
 
+	const enableButton = (event : any) =>{
+		const elements = document.querySelectorAll('input[type=checkbox]') as NodeListOf<HTMLInputElement>;
+		let checkedCount = 0;
+		elements.forEach((element)=>{
+		
+		  if(element.checked){
+			  console.log("checked");
+			checkedCount ++;
+		  }
+		});
+		if(checkedCount === 0){
+			setBtnStatus(true)
+		}else{
+			setBtnStatus(false)
+		}
+	};
+	
+	const redirectToPayment = (e : any) =>{
+		e.preventDefault();
+		navigate("/user/course/payment");
+	};
+	
     return (
         <div className='wrapper'>
             <div className='title'>
@@ -73,7 +107,7 @@ const UserLearning = () => {
                     <div className='search-btn reset'>重置</div>
                 </div>
             </div>
-            <div className='register-btn'>註冊所選活動</div>
+            <button className='register-btn' disabled={btnStatus} onClick={redirectToPayment}>註冊所選活動</button>
             <div className='search-item-wrapper'>
                 <div >
 					<table className='table'>
@@ -91,6 +125,7 @@ const UserLearning = () => {
 								<th>實際時數</th>
 								<th>「計劃」認可時數</th>
 								<th>費用(HKD)</th>
+								<th>參加</th>
 							</tr>
 						</thead>
 						<tbody className="course-content">
@@ -107,7 +142,8 @@ const UserLearning = () => {
 									<td>{course.location}</td>
 									<td>{course.aHour}</td>
 									<td>{course.pHour}</td>
-									<td>{a===b?'':'免費'}</td>
+									<td>{role!=='member'?'$3000':'免費'}</td>
+									<td><input className='eventCheckbox' type="checkbox" onChange={enableButton}/></td>
 								</tr>
 							))}
 						</tbody>

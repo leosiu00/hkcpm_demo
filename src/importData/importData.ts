@@ -1,6 +1,7 @@
 let data = {
     userData: [
         {
+			'role':'member',
             'surName_zh': '陳',
             'surName_en': 'Chan',
             'givenName_zh': '大文',
@@ -35,11 +36,22 @@ let data = {
 			]
         },
         {
+			'role':'user',
             'surname': '陳',
+			'surName_en': 'Chan',
             'givenName': '小文',
+			'givenName_en': 'Siu Man',
             'martialStatus': 'Single',
             'title': 'Mrs',
             'gender': 'F',
+			'membershipNo': '000002',
+			'membershipType': 'Non-member 非會員',
+			'membershipExpiry': '',
+			'membershipExpiryDate': '不適用',
+			'membershipFee': '',
+			'membershipForm': '',
+			'courses':[
+			]
         },
         {
             'surname': '李',

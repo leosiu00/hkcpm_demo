@@ -29,11 +29,11 @@ function Login() {
         }
         if (username === 'admin' && password === 'admin') {
             sessionService.set('user', 'admin');
-        } else if (username === 'user' && password === 'user') {
+        } else if (username === 'member' && password === 'member') {
             sessionService.set('user', 'user');
             sessionService.set('memberProfile', 0);
             window.location.href = '/hkcpm_demo/#/user';
-        } else if (username === 'user1' && password === 'user1') {
+        } else if (username === 'user' && password === 'user') {
             sessionService.set('user', 'user');
             sessionService.set('memberProfile', 1);
             window.location.href = '/hkcpm_demo/#/user';

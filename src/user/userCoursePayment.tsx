@@ -1,13 +1,21 @@
 import React from 'react';
-import './userContinuationPayment.scss';
+import './userCoursePayment.scss';
+import dataService from '../util/data.service';
+import sessionService from '../util/storage.service';
 import { Link, useNavigate } from 'react-router-dom';
 
-interface UserContinuationPaymentProps {
+interface UserCoursePaymentProps {
     // Define the props for your component here
 }
 
-const UserContinuationPayment: React.FC<UserContinuationPaymentProps> = (props) => {
+const UserCoursePayment: React.FC<UserCoursePaymentProps> = (props) => {
     const navigate = useNavigate();
+	let data;
+    if (sessionService.get('user') === 'user') {
+        data = dataService.get().userData[sessionService.get('memberProfile')];
+        console.log(data);
+    }
+	
     return (
         // JSX code for your component's UI goes here
         <div className='payment-wrapper'>
@@ -17,9 +25,9 @@ const UserContinuationPayment: React.FC<UserContinuationPaymentProps> = (props) 
                 <div className='left-div'>
                     <div className='payment-entry'>
                         <div>
-                            普通會員
+                            Professional Mediation Specialist Certification Training Course – Property and Building Management Mediation Specialist
                         </div>
-                        <div>$600</div>
+                        <div>{}</div>
                     </div>
                     <div>
                         <div style={{ fontWeight: 'bold', marginBottom: '30px' }}>
@@ -29,7 +37,7 @@ const UserContinuationPayment: React.FC<UserContinuationPaymentProps> = (props) 
                             <div>
                                 總共
                             </div>
-                            <div>$600</div>
+                            <div>$3000</div>
                         </div>
                     </div>
                     <Link to='/user/payment/success' className='payment-btn'>付款</Link>
@@ -85,4 +93,4 @@ const UserContinuationPayment: React.FC<UserContinuationPaymentProps> = (props) 
     );
 };
 
-export default UserContinuationPayment;
+export default UserCoursePayment;
