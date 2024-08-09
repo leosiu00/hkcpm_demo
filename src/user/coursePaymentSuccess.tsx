@@ -1,8 +1,17 @@
 import React from 'react';
-import './userPaymentSuccess.scss';
-import { Link } from 'react-router-dom';
+import './coursePaymentSuccess.scss';
+import dataService from '../util/data.service';
+import sessionService from '../util/storage.service';
+import { Link, useNavigate } from 'react-router-dom';
 
-const UserPaymentSuccess: React.FC = () => {
+const CoursePaymentSuccess: React.FC = () => {
+	const navigate = useNavigate();
+	let data;
+    if (sessionService.get('user') === 'user') {
+        data = dataService.get().userData[sessionService.get('memberProfile')];
+        console.log(data);
+    }
+	
     return (
         <div className='payment-info-wrapper'>
             
@@ -10,15 +19,15 @@ const UserPaymentSuccess: React.FC = () => {
                 <h1>你已成功付款。</h1>
                 <div className='payment-entry'>
                     <p className='entry-title'>名稱</p>
-                    <p className='entry-detail'>普通會員</p>
+                    <p className='entry-detail'>Professional Mediation Specialist Certification Training Course – Property and Building Management Mediation Specialist</p>
                 </div>
                 <div className='payment-entry'>
                     <p className='entry-title'>金額 (HKD)</p>
-                    <p className='entry-detail'>$600</p>
+                    <div style={{paddingTop: '16px'}}>{data.role==='member'?'免費':'$3000'}</div>
                 </div>
                 <div className='payment-entry'>
                     <p className='entry-title'>參考編號</p>
-                    <p className='entry-detail'>USER24071901</p>
+                    <p className='entry-detail'>COUR24071901</p>
                 </div>
                 <Link to='/user' className='return-home-btn'>返回主頁</Link>
             </div>
@@ -29,4 +38,4 @@ const UserPaymentSuccess: React.FC = () => {
     );
 };
 
-export default UserPaymentSuccess;
+export default CoursePaymentSuccess;

@@ -30,7 +30,11 @@
         .payment-total {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px
+            margin-top: 20px;
+			background-color:#F5F5F5;
+			padding:3px;
+			border-radius:5px;
+			
         }
 
         .payment-terms {
@@ -41,9 +45,39 @@
         }
 
         .payment-entry {
-            display: flex;
-            justify-content: space-between;
+           
             min-height: 400px;
+			margin: 5px;
+			margin-bottom: 50px;
+			padding: 10px;
+			border:0.5px solid lightgrey;
+			border-radius:15px;
+        }        
+		
+		.payment-item{
+			display: flex;
+            justify-content: space-between;
+			border-top: 1px solid lightgrey;
+			border-bottom: 1px solid lightgrey;
+			padding-top:30px;
+			padding-bottom:30px;
+			margin-left:5px;
+			margin-right:5px;
+		}
+		
+		.payment-summary {
+			margin: 5px;
+			padding-bottom: 10px;
+			padding-left: 10px;
+			padding-right: 10px;
+			border: 0.5px solid lightgrey;
+			border-radius:15px;
+			
+			h4{
+				font-weight: bold;				
+				padding-bottom: 10px;
+				border-bottom: 0.5px solid lightgrey;
+			}
         }
     }
 
@@ -52,10 +86,20 @@
         padding: 0 30px;
         display: flex;
         flex-direction: column;
+		background-color:#F5F5F5;
+		border-radius:15px;
 
+		div{
+			margin: 15px;
+			font-weight:bold;
+		}
+		
         .payment-info-title {
             margin-top: 30px;
             margin-bottom: 30px;
+			margin-left:15px;
+			margin-right:15px;
+			padding-bottom: 30px;
             font-size: large;
         }
 
@@ -71,6 +115,34 @@
                 margin-top: 14px;
             }
         }
+		
+		input{
+			width:95%;
+		}
+		
+		input[type='radio']{
+			width:auto;
+			height:auto;
+		}
+		
+		.customer-info{
+			border: 1px solid #F5F5F5;
+			margin: 5px;
+			background-color:white;
+			border-radius:15px;
+		}
+		
+		h2{
+			border-top:none;
+			border-bottom:1px solid #F5F5F5;
+			
+		}
+		
+		.radio-option{
+			background-color: #F5F5F5;
+			display:block !important;
+			border-radius: 5px;
+		}
     }
 
     .payment-detail {

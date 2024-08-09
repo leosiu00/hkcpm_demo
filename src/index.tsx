@@ -17,6 +17,7 @@ import {data} from "./importData/importData";
 import UserContinuationPayment from "./user/userContinuationPayment";
 import UserCoursePayment from "./user/userCoursePayment";
 import UserPaymentSuccess from "./user/userPaymentSuccess";
+import CoursePaymentSuccess from "./user/coursePaymentSuccess";
 import LogoutSuccess from "./logoutSuccess";
 
 const router = createHashRouter([
@@ -52,6 +53,10 @@ const router = createHashRouter([
       {
         path: "payment/success",
         element: <UserPaymentSuccess />,
+      },      
+	  {
+        path: "payment/courseSuccess",
+        element: <CoursePaymentSuccess />,
       },
       {
         path: "payment",

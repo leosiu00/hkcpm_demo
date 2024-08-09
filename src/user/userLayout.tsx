@@ -13,7 +13,7 @@ const UserLayout = () => {
     }
 	
 	console.log(location?.pathname);
-    const sideBarHidden = location?.pathname === '/user/continuation/payment' || location?.pathname === '/user/payment/success';
+    const sideBarHidden = (location?.pathname === '/user/continuation/payment' || location?.pathname === '/user/payment/success' ||  location?.pathname === '/user/course/payment' || location?.pathname === '/user/payment/courseSuccess');
     const navigate = useNavigate();
 
     const logout = () => {
