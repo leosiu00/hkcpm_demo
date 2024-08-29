@@ -1,0 +1,38 @@
+.item-wrapper {
+    text-decoration: none;
+    padding: 40px;
+    border-radius: 20px;
+    &:hover {
+        cursor: pointer;
+        background-color: #00A651;
+
+        .item-title {
+            color: white;
+        }
+
+        .item-desc {
+            color: white;
+        }
+    }
+
+    .item-title {
+        color: #00A651;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 50px;
+    }
+
+    .item-desc {
+        color: grey;
+    }
+}
+
+.item-wrapper  .default-image,
+.item-wrapper:hover .hover-image{
+  display: block;
+}
+
+.item-wrapper .hover-image,
+.item-wrapper:hover .default-image{
+  display: none;
+}

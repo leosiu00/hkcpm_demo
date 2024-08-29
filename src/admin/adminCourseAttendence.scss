@@ -1,0 +1,37 @@
+.input-field {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin-top: 20px;
+    width: 1200px;
+}
+
+.submit-group{
+	float:right;
+	
+	a{
+		padding-top:4px;
+		padding-left:25px;
+		padding-right:25px;
+		padding-bottom:4px;
+		margin-left:20px;
+		border-radius:15px;
+		border:0.5px solid lightgrey;
+		text-decoration:none;
+	}
+	
+	.b-white{
+		background-color:white;
+		color:black;
+	}	
+	
+	.b-black{
+		background-color:black;
+		color:white;	
+	}
+}
+
+.userinfo-wrapper {
+    width: 75vw;
+    padding: 50px;
+
+}

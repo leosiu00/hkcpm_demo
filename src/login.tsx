@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import { data } from "./importData/importData";
 import dataService from './util/data.service';
 import { courseData } from "./importData/coursesList";
+import { paymentData } from "./importData/paymentList";
 import courseService from './util/courseData.service';
+import paymentService from './util/payment.service';
 import sessionService from './util/storage.service';
 
 function Login() {
@@ -18,6 +20,9 @@ function Login() {
         }        
 		if (!courseService.get()) {
             courseService.set(courseData);
+        }		
+		if (!paymentService.get()) {
+            paymentService.set(paymentData);
         }
     }, []);
 
@@ -29,6 +34,8 @@ function Login() {
         }
         if (username === 'admin' && password === 'admin') {
             sessionService.set('user', 'admin');
+            sessionService.set('user', 'admin');
+			window.location.href = '/hkcpm_demo/#/admin';
         } else if (username === 'member' && password === 'member') {
             sessionService.set('user', 'user');
             sessionService.set('memberProfile', 0);

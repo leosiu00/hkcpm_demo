@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import UserHome from "./user/userHome";
+import AdminHome from "./admin/adminHome";
+
 import {
   createHashRouter,
   RouterProvider,
@@ -10,6 +12,7 @@ import ErrorPage from "./error-page";
 import Login from "./login";
 import UserLayout from "./user/userLayout";
 import UserInfo from "./user/userInfo";
+
 import UserContinuation from "./user/userContinuation";
 import UserPayment from "./user/userPayment";
 import UserLearning from "./user/userLearning";
@@ -19,6 +22,16 @@ import UserCoursePayment from "./user/userCoursePayment";
 import UserPaymentSuccess from "./user/userPaymentSuccess";
 import CoursePaymentSuccess from "./user/coursePaymentSuccess";
 import LogoutSuccess from "./logoutSuccess";
+
+
+import AdminLayout from "./admin/adminLayout";
+import AdminPayment from "./admin/adminPayment";
+import AdminCourse from "./admin/adminCourse";
+import AdminCourseAttendence from "./admin/adminCourseAttendence";
+import AdminCourseEdit from "./admin/adminCourseEdit";
+import AdminPaymentDetail from "./admin/adminPaymentDetail";
+import AdminMember from "./admin/adminMember";
+import AdminMemberInfo from "./admin/adminMemberInfo";
 
 const router = createHashRouter([
   {
@@ -65,6 +78,41 @@ const router = createHashRouter([
       {
         path: "learning",
         element: <UserLearning />,
+      },
+    ],
+  },  
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true,
+        element: <AdminHome />,
+      },     
+	   {
+        path: "payment",
+        element: <AdminPayment />,
+      },	   
+	  {
+        path: "course",
+        element: <AdminCourse />,
+      },
+	  {
+        path: "courseAttendence",
+        element: <AdminCourseAttendence />,
+      }, {
+        path: "courseEdit",
+        element: <AdminCourseEdit />,
+      }, {
+        path: "paymentDetail",
+        element: <AdminPaymentDetail />,
+      }, {
+        path: "member",
+        element: <AdminMember />,
+      }, {
+        path: "memberDetail",
+        element: <AdminMemberInfo />,
       },
     ],
   },

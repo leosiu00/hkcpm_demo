@@ -37,9 +37,9 @@ let data = {
         },
         {
 			'role':'user',
-            'surname': '陳',
+            'surName_zh': '陳',
 			'surName_en': 'Chan',
-            'givenName': '小文',
+            'givenName_zh': '小文',
 			'givenName_en': 'Siu Man',
             'martialStatus': 'Single',
             'title': 'Mrs',
@@ -52,13 +52,7 @@ let data = {
 			'membershipForm': '',
 			'courses':[
 			]
-        },
-        {
-            'surname': '李',
-            'givenName': '小明',
-            'martialStatus': 'Single',
-            'title': 'Dr',
-        },
+        }
     ]
 }
 
