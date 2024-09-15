@@ -66,7 +66,7 @@ const UserLearning = () => {
 	return (
 		<div className='wrapper'>
 			<div className='title'>
-				電子專業進修活動
+				專業進修活動
 			</div>
 			{!isLanding && <div className='category-wrapper'>
 				{categoryList.map((category) => (<div className='item-wrapper'
@@ -167,18 +167,7 @@ const UserLearning = () => {
 					</div>
 				</div>
 			</div>}
-			<div className='reminder-wrapper'>
-				<div className='reminder-title'>
-					注意事項
-				</div>
-				<div>
-					<div className='reminder-content'>1. 當所選活動一付費, 會員將會被分發一個專有的登入帳戶及密碼, 並可以此來查看影片｡</div>
-					<div className='reminder-content'>2. 該影片只會被同一帳戶觀看三次, 在觀看第一次時, 影片不能夠拉動時間｡ 在觀看第二次, 則可以｡</div>
-					<div className='reminder-content'>3. 會員有關觀看影片的使用時間將會記錄下來｡</div>
-					<div className='reminder-content'>4. 我們網頁能夠看到每一個課程的選購及觀看次數｡</div>
-					<div className='reminder-content'>5. 我們能夠證明會員是在完成觀看影片, 並符合CPD的要求｡</div>
-				</div>
-			</div>
+			
 		</div>
 	);
 };
