@@ -48,6 +48,9 @@ const AdminCourse: React.FC<AdminCourseProps> = () => {
                     <div className='search-btn reset'>重置</div>
                 </div>
             </div>
+			<div style={{ width: '75vw' }}>
+				<div className='add-course-button'>新增活動／課程</div>
+			</div>
             <div className='search-item-wrapper'>
                 <div >
 						<table className='table'>
@@ -58,6 +61,7 @@ const AdminCourse: React.FC<AdminCourseProps> = () => {
 									<th>參加人數</th>
 									<th>參加名單</th>
 									<th>修改</th>
+									<th>移除</th>
 
 								</tr>
 							</thead>
@@ -69,6 +73,7 @@ const AdminCourse: React.FC<AdminCourseProps> = () => {
 										<td>{course.attendance}</td>										
 										<td><a href="#/admin/courseAttendence">按此查看</a></td>
 										<td><a href="#/admin/courseEdit">按此修改</a></td>
+										<td><a href="#/admin/course">按此移除</a></td>
 									</tr>
 								))}
 							</tbody>

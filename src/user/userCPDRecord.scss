@@ -36,4 +36,20 @@
             color: black;
         }
     }
+	
+	table{
+		width: 100%;
+	}
+	
+	table tr td {
+		text-align: left;
+	}
+	
+	.year-2023{
+		color:blue;
+	}	
+	.year-2023:hover{
+		cursor: pointer;
+	}
+	
 }

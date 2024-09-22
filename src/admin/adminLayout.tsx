@@ -42,7 +42,7 @@ const AdminLayout = () => {
                         <Link to='/admin/course' className={`sub-items ${location?.pathname==='/admin/course'?'green':''}`}>
 							<img src="./event_menu.svg" className="menu-icon" />
 							<span>管理進修活動</span></Link>
-                        <Link to='/admin/email' className={`sub-items ${location?.pathname==='/admin/email'?'green':''}`}>
+                        <Link to='/admin/email' className={`sub-items ${location?.pathname==='/admin/email'?'green':''}`} style={{ display: 'none'}}>
 							<img src="./admin_email_management.svg" className="menu-icon" />
 							<span>管理電郵範本</span>
 						</Link>                        
