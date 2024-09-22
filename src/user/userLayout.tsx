@@ -43,7 +43,7 @@ const UserLayout = () => {
                         <Link to='/user/info' className={`sub-items ${location?.pathname==='/user/info'?'green':''}`} >
 							<img src="./profile_menu.svg" className="menu-icon" />
 							<span>個人檔案</span></Link>                        
-						<Link to='/user/info' className={`sub-items ${location?.pathname==='/user/info'?'green':''}`} >
+						<Link to='/user/cpdRecord' className={`sub-items ${location?.pathname==='/user/cpdRecord'?'green':''}`} >
 							<img src="./profile_menu.svg" className="menu-icon" />
 							<span>CPD紀錄</span></Link>
                         <Link to='/user/continuation' className={`sub-items ${location?.pathname==='/user/continuation'?'green':''}`}>

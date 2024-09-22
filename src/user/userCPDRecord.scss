@@ -1,0 +1,39 @@
+.record-wrapper {
+    padding: 50px;
+    margin-top: 50px;
+
+    .title {
+        margin-top: 40px;
+        font-size: xx-large;
+        font-weight: bold;
+        margin-bottom: 30px;
+    }
+    
+    .left-div {
+        width: 50%;
+    }
+
+    .right-div {
+        width: 50%;
+    }
+    
+
+    .chart-wrapper {
+        display: flex;
+        
+    }
+
+    .btn_group {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+
+        .btn {
+            margin-left: 20px;
+            width: 150px;
+            font-size: small;
+            background-color: white;
+            color: black;
+        }
+    }
+}

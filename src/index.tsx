@@ -32,6 +32,7 @@ import AdminCourseEdit from "./admin/adminCourseEdit";
 import AdminPaymentDetail from "./admin/adminPaymentDetail";
 import AdminMember from "./admin/adminMember";
 import AdminMemberInfo from "./admin/adminMemberInfo";
+import UserCPDRecord from "./user/userCPDRecord";
 
 const router = createHashRouter([
   {
@@ -79,6 +80,10 @@ const router = createHashRouter([
         path: "learning",
         element: <UserLearning />,
       },
+      {
+        path: "cpdRecord",
+        element: <UserCPDRecord />,
+      }
     ],
   },  
   {

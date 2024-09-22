@@ -33,7 +33,9 @@ let data = {
 					"price":"$3000",
 					"reason":"退款原因",
 				}
-			]
+			],
+			'formalCPDHrs': 22,
+			'informalCPDHrs': 8,
         },
         {
 			'role':'user',
@@ -51,7 +53,9 @@ let data = {
 			'membershipFee': '',
 			'membershipForm': '',
 			'courses':[
-			]
+			],
+			'formalCPDHrs': 16,
+			'informalCPDHrs': 5,
         }
     ]
 }
